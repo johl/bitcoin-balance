@@ -9,7 +9,7 @@ You also need to have *Bundler* installed. If you haven't done this already, ple
     
     gem install bundler
 
-# Installation and running he application
+# Installation and running the application
 
 Install the required gems
      
