@@ -14,8 +14,8 @@ class Balance < Thor
     user = get_user()
     password = get_password()
     balance = Bitcoin(user, password).balance
-    balanceCUR = JSON.parse(RestClient.get "https://mtgox.com/api/0/data/ticker.php?Currency=#{options[:currency]}")['ticker']['avg'] * balance
-    puts "You have #{balance} BTC, which is currently #{balanceCUR} #{options[:currency]}."
+    balanceCUR = Float(JSON.parse(RestClient.get "http://data.mtgox.com/api/1/BTC#{options[:currency].upcase}/ticker")['return']['avg']['value']) * balance
+    puts "You have #{balance} BTC in your wallet on this computer, which is currently #{balanceCUR} #{options[:currency].upcase}."
   end
   
   no_tasks do
