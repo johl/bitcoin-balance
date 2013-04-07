@@ -57,5 +57,5 @@ class Balance < Thor
   
 end
 
-ARGV.push("balance")
+ARGV.unshift("balance")
 Balance.start
